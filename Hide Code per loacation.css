@@ -1,0 +1,20 @@
+<script>
+  var currentURL = window.location.href;
+
+  // Add you location links here
+  var allowedPaths = [
+    "https://app.gohighlevel.com/v2/location/paNwqeWANVjkU7Mnp522/",
+    "https://app.gohighlevel.com/v2/location/location-2/"
+  ];
+
+  var isAllowedPath = allowedPaths.some(function(path) {
+    return currentURL.startsWith(path);
+  });
+
+  if (isAllowedPath) {
+    var style = document.createElement("style");
+    var cssCode = "#sb_sites, #sb_launchpad { display: none; }";
+    style.innerHTML = cssCode;
+    document.head.appendChild(style);
+  }
+</script>
